@@ -1,6 +1,7 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
@@ -94,12 +95,21 @@ public class InputPlayerManagerCustom : MonoBehaviour
       MoveLeft();
     }
   }
-           
 
-  public void MoveLeft()
+    private void OnEnable()
+    {
+        EnhancedTouchSupport.Enable();
+    }
+
+    private void OnDisable()
+    {
+        EnhancedTouchSupport.Disable();
+    }
+    public void MoveLeft()
   {
     OnMoveLeft?.Invoke(); // appel de l'event dispatcher associé
   }
+
 
   public void MoveRight()
   {

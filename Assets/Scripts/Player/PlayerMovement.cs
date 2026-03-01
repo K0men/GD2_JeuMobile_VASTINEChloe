@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
    private void Start()
    {
-      m_currentIndex = 2;
+      m_currentIndex = 1;
       transform.position = m_transforms[m_currentIndex].position;
    }
 
