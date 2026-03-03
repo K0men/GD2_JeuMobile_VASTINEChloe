@@ -42,7 +42,6 @@ public class LevelLoader : MonoBehaviour
         if (score < _scoreThreshold) return;
         EndLevel(true);
     }
-
     private void EndLevel(bool won)
     {
         if (_levelEnded) return;

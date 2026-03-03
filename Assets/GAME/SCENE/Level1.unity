@@ -891,12 +891,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScreenAdapt
   _referenceHeight: 1920
   _pixelsPerUnit: 1
+  _background: {fileID: 196324475}
   _lanePositions:
   - {fileID: 2077423040}
   - {fileID: 2077423039}
   - {fileID: 2077423038}
   _laneMarginPercent: 0.15
+  _laneHeightFromBottom: 0.7
   _spawner: {fileID: 1617604760}
+  _player: {fileID: 1702142585}
 --- !u!1 &982563331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,11 +1538,14 @@ MonoBehaviour:
   - {fileID: 4222295915854242966, guid: 26ae32e3b01b0904193078bf64f06deb, type: 3}
   _Crab:
   - {fileID: 4222295915854242966, guid: f781f6df9b1219d4489ff4fcf2592a67, type: 3}
+  _maxFish: 15
+  _maxOctopus: 3
+  _maxCrab: 4
   _lanePositions:
   - {fileID: 2077423040}
   - {fileID: 2077423039}
   - {fileID: 2077423038}
-  _spawnInterval: 5
+  _spawnInterval: 2.5
   _spawnY: 800
 --- !u!4 &1617604761
 Transform:
@@ -1724,6 +1730,11 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.49999997
+--- !u!4 &1702142585 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 659614158813677825, guid: 5534ef03a27904944872c806962efdb2, type: 3}
+  m_PrefabInstance: {fileID: 1702142578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1831324285
 GameObject:
   m_ObjectHideFlags: 0

@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
   _pointValue: 5
-  _fallSpeed: 200
+  _fallSpeed: 350
   _destroyBelowY: -430
 --- !u!50 &-7448785241346519984
 Rigidbody2D:
