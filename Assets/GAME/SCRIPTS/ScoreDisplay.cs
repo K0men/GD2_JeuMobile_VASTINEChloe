@@ -18,6 +18,5 @@ public class ScoreDisplay : MonoBehaviour
         ScoreManager.Instance.OnScoreChanged -= UpdateDisplay;
     }
 
-    /// <summary>Updates the score label with the current score value.</summary>
     private void UpdateDisplay(int score) => _scoreText.text = "SCORE : " + score;
 }

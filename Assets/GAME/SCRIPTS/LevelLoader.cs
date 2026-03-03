@@ -18,7 +18,6 @@ public class LevelLoader : MonoBehaviour
         ScoreManager.Instance.OnScoreChanged -= CheckScoreThreshold;
     }
 
-    /// <summary>Loads the target scene when the score reaches the threshold.</summary>
     private void CheckScoreThreshold(int score)
     {
         if (score < _scoreThreshold) return;

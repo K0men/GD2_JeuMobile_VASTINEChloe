@@ -10,7 +10,8 @@ public class Collectible : MonoBehaviour
     {
         transform.Translate(Vector3.down * _fallSpeed * Time.deltaTime);
 
-        if (transform.position.y < _destroyBelowY)
+        float bottomBound = Camera.main.transform.position.y - Camera.main.orthographicSize - 50f;
+        if (transform.position.y < bottomBound)
             Destroy(gameObject);
     }
 

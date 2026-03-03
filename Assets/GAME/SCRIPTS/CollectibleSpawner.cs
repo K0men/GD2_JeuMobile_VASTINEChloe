@@ -21,7 +21,6 @@ public class CollectibleSpawner : MonoBehaviour
 
     private void SpawnCollectible()
     {
-        // Combine all enemy types into a single pool
         GameObject[] allEnemies = new GameObject[_Fish.Length + _Octopus.Length + _Crab.Length];
         _Fish.CopyTo(allEnemies, 0);
         _Octopus.CopyTo(allEnemies, _Fish.Length);
