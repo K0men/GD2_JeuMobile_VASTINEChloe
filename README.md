@@ -1,17 +1,15 @@
-# GD2_JeuMobile_VASTINEChloe
+La Sirène et le Pêcheur
 
-Jeu type Game n Watch
+On joue une sirène qui tombe amoureuse d'un pêcheur et qui veux l'aider dans son travail. Elle pêche des poissons des poulpes et des crabes, rapportant chacun des points différents, tout en évitant les autres bâteaux de pêche qui pourraient la capturer.
 
-On joue une sirène qui tombe amoureuse d'un pêcheur et qui veux l'aider dans son travail. Elle pêche des poissons des poulpes et des crabes, rapportant chacun des points
-différents, tout en évitant les autres bâteaux de pêche qui pourraient la capturer.
+On devra se déplacer sur 3 endroits à l'aide des flèches de direction gauche et droite, collectant des poissons (valeur=1), des crabes (valeur=5) et des poulpes (valeur=10). Il faudra également éviter des bateaux pour éviter le gameover. Le joueur peux également perdre si il met trop de temps à récolter assez de poissons pour avoir le score adéquat pour passer au prochaine level
 
-But : trouver le plus de poissons possibles et éviter les bâteaux
+Jeu en pixel art, une histoire de romance loufoque et un gameplay rapide.
 
-Une seule vie (peut etre 3 plus tard)
+Sirène
 
-1 seul niveau (a voir pour augmenter la difficulté de ce niveau (facile/moyen/élevé))
+Level 1 complet
 
-La sirène dois bouger sur 3 axes seulement
+Cible : joueurs mobile casu et enfants
 
-Sound design menu principal : musique, clicked
-	     in game : +Fish, fin de la partie, mouvement, perdu (bâteau)
+Moteur de jeu Unity
