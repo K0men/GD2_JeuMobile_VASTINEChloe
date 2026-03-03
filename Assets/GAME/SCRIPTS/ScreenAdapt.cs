@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class PlayZoneAdapter : MonoBehaviour
+public class ScreenAdapt : MonoBehaviour
 {
     [Header("Reference Resolution")]
     [SerializeField] private float _referenceHeight = 1920f;

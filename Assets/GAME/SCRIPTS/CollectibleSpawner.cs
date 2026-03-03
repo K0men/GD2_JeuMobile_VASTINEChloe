@@ -5,6 +5,7 @@ public class CollectibleSpawner : MonoBehaviour
     [SerializeField] private GameObject[] _Fish;
     [SerializeField] private GameObject[] _Octopus;
     [SerializeField] private GameObject[] _Crab;
+    public void SetSpawnY(float y) => _spawnY = y;
     [SerializeField] private Transform[] _lanePositions;
     [SerializeField] private float _spawnInterval = 2f;
     [SerializeField] private float _spawnY = 8f;
