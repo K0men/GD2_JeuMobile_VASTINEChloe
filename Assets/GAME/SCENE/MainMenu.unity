@@ -276,7 +276,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7f6d79e62899a514092a85503dee2ede, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.22
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 1593999505}
   - component: {fileID: 1593999504}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Slpash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +724,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: afcdea33678e4414da7c14e82a1f0098, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.18
+  m_Volume: 0.075
   m_Pitch: 1
   Loop: 0
   Mute: 0
