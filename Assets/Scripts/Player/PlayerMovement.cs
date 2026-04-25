@@ -2,47 +2,51 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-   [SerializeField] private Transform[] m_transforms;
-   [SerializeField] private InputPlayerManagerCustom m_inputManager; // lien component/event dispatcher
+    [SerializeField] private Transform[] m_transforms;
+    [SerializeField] private InputPlayerManagerCustom m_inputManager;
+    [SerializeField] private AudioEventDispatcher m_audioEventDispatcher;
 
-   private int m_currentIndex = 2;
-   private int m_moveSpeed = 1;
+    private int m_currentIndex = 2;
+    private const int MoveSpeed = 1;
 
-   private void OnEnable()
-   {
-      m_inputManager.OnMoveLeft += MoveToPreviousPosition; // bind à event dispatcher left
-      m_inputManager.OnMoveRight += MoveToNextPosition; // bind à event dispatcher right
-   }
+    private void OnEnable()
+    {
+        m_inputManager.OnMoveLeft += MoveToPreviousPosition;
+        m_inputManager.OnMoveRight += MoveToNextPosition;
+    }
 
-   private void Start()
-   {
-      m_currentIndex = 1;
-      transform.position = m_transforms[m_currentIndex].position;
-   }
+    private void OnDisable()
+    {
+        m_inputManager.OnMoveLeft -= MoveToPreviousPosition;
+        m_inputManager.OnMoveRight -= MoveToNextPosition;
+    }
 
-   public void MoveToNextPosition()
-   {
-      m_currentIndex += m_moveSpeed;
-      m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
-      UpdatePosition();
-   }
+    private void Start()
+    {
+        m_currentIndex = 1;
+        transform.position = m_transforms[m_currentIndex].position;
+    }
 
-   public void MoveToPreviousPosition()
-   {
-      m_currentIndex -= m_moveSpeed;
-      m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
-      UpdatePosition();
-   }
+    public void MoveToNextPosition()
+    {
+        m_currentIndex = Mathf.Clamp(m_currentIndex + MoveSpeed, 0, m_transforms.Length - 1);
+        UpdatePosition();
+    }
 
-   public void MoveToDirection(int direction) // direction = -1 OU 1
-   {
-      m_currentIndex = m_currentIndex + m_moveSpeed*direction;
-      m_currentIndex = Mathf.Clamp(m_currentIndex, 0, m_transforms.Length - 1);
-      UpdatePosition();
-   }
+    public void MoveToPreviousPosition()
+    {
+        m_currentIndex = Mathf.Clamp(m_currentIndex - MoveSpeed, 0, m_transforms.Length - 1);
+        UpdatePosition();
+    }
 
-   public void UpdatePosition()
-   {
-      transform.position = m_transforms[m_currentIndex].position;
-   }
+    public void MoveToDirection(int direction)
+    {
+        m_currentIndex = Mathf.Clamp(m_currentIndex + MoveSpeed * direction, 0, m_transforms.Length - 1);
+        UpdatePosition();
+    }
+    public void UpdatePosition()
+    {
+        transform.position = m_transforms[m_currentIndex].position;
+        m_audioEventDispatcher.Playaudio(AudioType.PlayerMovement);
+    }
 }

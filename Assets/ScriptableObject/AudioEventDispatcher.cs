@@ -9,6 +9,7 @@ public enum AudioType
     PlayerMovement,
     Destruction,
     Death,
+    Collect,
     Win
 }
 
@@ -36,7 +37,5 @@ public class AudioEventDispatcher : ScriptableObject
                 return;
             }
         }
-        
-        
     }
 }

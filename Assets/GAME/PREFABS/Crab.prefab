@@ -145,6 +145,7 @@ MonoBehaviour:
   _pointValue: 5
   _fallSpeed: 350
   _destroyBelowY: -430
+  _audioEventDispatcher: {fileID: 11400000, guid: ae8d4a8d2ac4c48418146a2c3629decb, type: 2}
 --- !u!50 &-7448785241346519984
 Rigidbody2D:
   serializedVersion: 5
