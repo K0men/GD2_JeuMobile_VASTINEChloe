@@ -19,6 +19,12 @@ public class ScreenAdapt : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] private Transform _player;
+    [Header("Pecheur")]
+    [SerializeField] private Transform _pecheur;
+    [Tooltip("Horizontal offset from camera center (in world units).")]
+    [SerializeField] private float _pecheurOffsetX = 0f;
+    [Tooltip("Vertical offset from lane height (in world units).")]
+    [SerializeField] private float _pecheurOffsetY = 0f;
 
     private Camera _camera;
 
@@ -66,10 +72,15 @@ public class ScreenAdapt : MonoBehaviour
             }
         }
 
-        if (_player != null && _lanePositions.Length > 0)
+        if (_player != null && _lanePositions != null && _lanePositions.Length > 0)
             _player.position = _lanePositions[_lanePositions.Length / 2].position;
+
 
         if (_spawner != null)
             _spawner.SetSpawnY(camY + halfHeight + 50f);
+        if (_pecheur != null)
+            _pecheur.position = new Vector3(camX + _pecheurOffsetX, laneY + _pecheurOffsetY, -1f);
+
     }
+
 }
