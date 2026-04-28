@@ -15,11 +15,20 @@ EditorBuildSettings:
     path: Assets/GAME/SCENE/Level1.unity
     guid: 5da29102efa16e7478c20751d96723a2
   - enabled: 1
-    path: Assets/GAME/SCENE/Win.unity
+    path: Assets/GAME/SCENE/WinLevel1.unity
     guid: a1afd8e33692da6439c20205975af605
   - enabled: 1
-    path: Assets/GAME/SCENE/Lose.unity
+    path: Assets/GAME/SCENE/LoseLevel1.unity
     guid: efb9f125e7a18c944a5156f4111e80f6
+  - enabled: 1
+    path: Assets/GAME/SCENE/Level2.unity
+    guid: 01d4c2e7dea28d74dbe1bac489cab175
+  - enabled: 1
+    path: Assets/GAME/SCENE/WinLevel2.unity
+    guid: 79c7d0421d7efbf468e6982a0a5c4ced
+  - enabled: 1
+    path: Assets/GAME/SCENE/LoseLevel2.unity
+    guid: 0f5ea6d3402d54c4db104848a5cb32a9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2b3d0dd967d909e4b83cafe74658842e, type: 3}
   m_UseUCBPForAssetBundles: 0

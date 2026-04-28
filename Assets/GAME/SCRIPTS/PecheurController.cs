@@ -19,6 +19,9 @@ public class PecheurController : MonoBehaviour
     [Header("Exclamation Mark")]
     [SerializeField] private GameObject exclamationMark;
 
+    [Header("Audio")]
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+
     [Header("Timing")]
     [Tooltip("Min seconds before the '!' appears after fishing starts.")]
     [SerializeField] private float exclamationDelayMin = 1.5f;
@@ -26,21 +29,22 @@ public class PecheurController : MonoBehaviour
     [SerializeField] private float exclamationDelayMax = 4f;
     [Tooltip("How long the '!' window stays open before closing (in seconds).")]
     [SerializeField] private float exclamationWindowDuration = 1f;
+    [Tooltip("How long the catch sprite is displayed before returning to Idle.")]
+    [SerializeField] private float catchDisplayDuration = 2f;
 
     [Header("Catch Chances")]
-    [Tooltip("Probability of catching a fish (0–1).")]
+    [Tooltip("Probability of catching a fish (0-1).")]
     [Range(0f, 1f)]
     [SerializeField] private float fishChance = 0.34f;
-    [Tooltip("Probability of catching a crab (0–1). Octopus fills the rest.")]
+    [Tooltip("Probability of catching a crab (0-1). Octopus fills the rest.")]
     [Range(0f, 1f)]
     [SerializeField] private float crabChance = 0.33f;
 
-    /// <summary>The result of the most recent catch attempt.</summary>
     public CatchType LastCatch { get; private set; } = CatchType.None;
 
     private enum FishermanState { Idle, Fishing, AlertWindow, Catch }
     private FishermanState _currentState = FishermanState.Idle;
-    private Coroutine _exclamationRoutine;
+    private Coroutine _activeRoutine;
 
     private void Awake()
     {
@@ -65,9 +69,6 @@ public class PecheurController : MonoBehaviour
             case FishermanState.AlertWindow:
                 EnterCatch();
                 break;
-            case FishermanState.Catch:
-                EnterIdle();
-                break;
         }
     }
 
@@ -84,34 +85,34 @@ public class PecheurController : MonoBehaviour
         _currentState = FishermanState.Fishing;
         spriteRenderer.sprite = pecheurFishing;
         SetExclamationVisible(false);
-
-        if (_exclamationRoutine != null) StopCoroutine(_exclamationRoutine);
-        _exclamationRoutine = StartCoroutine(ExclamationRoutine());
+        StartManagedCoroutine(ExclamationRoutine());
     }
 
     private void EnterAlertWindow()
     {
         _currentState = FishermanState.AlertWindow;
         SetExclamationVisible(true);
-        _exclamationRoutine = StartCoroutine(AlertWindowRoutine());
+        StartManagedCoroutine(AlertWindowRoutine());
     }
 
     private void EnterCatch()
     {
-        if (_exclamationRoutine != null)
-        {
-            StopCoroutine(_exclamationRoutine);
-            _exclamationRoutine = null;
-        }
+        StopManagedCoroutine();
 
         LastCatch = RollCatchType();
         _currentState = FishermanState.Catch;
         spriteRenderer.sprite = GetCatchSprite(LastCatch);
         SetExclamationVisible(false);
-    }
 
-    /// <summary>Rolls a random catch result based on the configured probabilities.</summary>
-    private CatchType RollCatchType()
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.AddPoints(GetCatchPoints(LastCatch));
+
+        if (_audioEventDispatcher != null)    
+            _audioEventDispatcher.Playaudio(AudioType.Collect); 
+
+        StartManagedCoroutine(CatchDisplayRoutine());
+    }
+private CatchType RollCatchType()
     {
         float roll = Random.value;
         if (roll < fishChance) return CatchType.Fish;
@@ -119,7 +120,6 @@ public class PecheurController : MonoBehaviour
         return CatchType.Octopus;
     }
 
-    /// <summary>Returns the sprite associated with the given catch type.</summary>
     private Sprite GetCatchSprite(CatchType catchType)
     {
         return catchType switch
@@ -128,6 +128,18 @@ public class PecheurController : MonoBehaviour
             CatchType.Crab => pecheurCatchCrab,
             CatchType.Octopus => pecheurCatchOctopus,
             _ => pecheurIdle
+        };
+    }
+
+    /// <summary>Returns the point value awarded for each catch type.</summary>
+    private int GetCatchPoints(CatchType catchType)
+    {
+        return catchType switch
+        {
+            CatchType.Fish => 1,
+            CatchType.Crab => 5,
+            CatchType.Octopus => 10,
+            _ => 0
         };
     }
 
@@ -141,8 +153,28 @@ public class PecheurController : MonoBehaviour
     private IEnumerator AlertWindowRoutine()
     {
         yield return new WaitForSeconds(exclamationWindowDuration);
-        // Player missed the window — restart fishing
         EnterFishing();
+    }
+
+    private IEnumerator CatchDisplayRoutine()
+    {
+        yield return new WaitForSeconds(catchDisplayDuration);
+        EnterIdle();
+    }
+
+    private void StartManagedCoroutine(IEnumerator routine)
+    {
+        StopManagedCoroutine();
+        _activeRoutine = StartCoroutine(routine);
+    }
+
+    private void StopManagedCoroutine()
+    {
+        if (_activeRoutine != null)
+        {
+            StopCoroutine(_activeRoutine);
+            _activeRoutine = null;
+        }
     }
 
     private bool DetectTap()

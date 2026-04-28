@@ -119,6 +119,98 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &708633249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708633251}
+  - component: {fileID: 708633250}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &708633250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708633249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc99223722c858438d44d30aa1ea600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+--- !u!4 &708633251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708633249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1207.2897, y: 484.69272, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770356483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770356485}
+  - component: {fileID: 770356484}
+  m_Layer: 0
+  m_Name: LevelLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &770356484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770356483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f677348bfe74e714e868a9ffaf3c320e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
+  _scoreThreshold: 35
+  _winSceneName: WinLevel2
+  _timeLimit: 60
+  _loseSceneName: LoseLevel2
+--- !u!4 &770356485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770356483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1215.6503, y: 487.65082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981204100
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,16 +554,16 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2129201375
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3168504048300293370, guid: 58c3665a60c6cbd4f98fa05b2a030a44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 58c3665a60c6cbd4f98fa05b2a030a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.15, y: 0.62}
+  m_Size: {x: 0.15, y: 0.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -485,9 +577,9 @@ Transform:
   m_GameObject: {fileID: 1145247680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 3.96, z: 0}
+  m_LocalScale: {x: 2.72, y: 2.72, z: 2.72}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1445102980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -524,7 +616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenAdapt
   _referenceHeight: 1920
-  _pixelsPerUnit: 1
   _background: {fileID: 1709830457}
   _lanePositions: []
   _laneMarginPercent: 0.15
@@ -863,11 +954,16 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   pecheurIdle: {fileID: 6181333509312454007, guid: 85dddd7171f0baf4ca8887b69b919ec2, type: 3}
   pecheurFishing: {fileID: -6219188760055887382, guid: df16f7b8a7f6d274f919df554a110c60, type: 3}
-  pecheurCatch: {fileID: 8646160850431631572, guid: 68be5fa8f2dbc674280b3392d5748e6e, type: 3}
+  pecheurCatchFish: {fileID: 1857604496845306499, guid: e6d332cdb30aea341bc8c5dca8b705c6, type: 3}
+  pecheurCatchCrab: {fileID: 5884380326390582517, guid: ce1ace6b7de502441be32936bad6b3f6, type: 3}
+  pecheurCatchOctopus: {fileID: -1092186975740550349, guid: 4614457f4597b4244babfd81d36e88d9, type: 3}
   exclamationMark: {fileID: 1145247680}
-  exclamationDelayMin: 1.5
-  exclamationDelayMax: 4
-  exclamationWindowDuration: 1.5
+  exclamationDelayMin: 2
+  exclamationDelayMax: 5
+  exclamationWindowDuration: 0.4
+  catchDisplayDuration: 0.6
+  fishChance: 0.5
+  crabChance: 0.3
 --- !u!212 &1445102979
 SpriteRenderer:
   serializedVersion: 2
@@ -1043,3 +1139,5 @@ SceneRoots:
   - {fileID: 1369105661}
   - {fileID: 1445102980}
   - {fileID: 1003535118}
+  - {fileID: 708633251}
+  - {fileID: 770356485}
