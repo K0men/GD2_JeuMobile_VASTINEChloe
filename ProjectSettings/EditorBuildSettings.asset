@@ -38,6 +38,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GAME/SCENE/WinLevel3.unity
     guid: 8f38160b018d1f94db3ab327f89f8d84
+  - enabled: 1
+    path: Assets/GAME/SCENE/Tuto1.unity
+    guid: eb3fb0664e1511a4d878641b43762249
+  - enabled: 1
+    path: Assets/GAME/SCENE/Tuto2.unity
+    guid: 01b7d111c9435a946b538fa274a744f2
+  - enabled: 1
+    path: Assets/GAME/SCENE/Tuto3.unity
+    guid: ea8d649a4f3a1c647a5a837fdcc61afb
+  - enabled: 1
+    path: Assets/GAME/SCENE/Tutos.unity
+    guid: 5e5354f6d497cc947957cb62d7f9d018
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2b3d0dd967d909e4b83cafe74658842e, type: 3}
   m_UseUCBPForAssetBundles: 0
