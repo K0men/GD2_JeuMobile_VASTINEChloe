@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuButton
   _audioSource: {fileID: 1832210865}
   _clickSound: {fileID: 8300000, guid: 2b02c299601d14c46aebeed1e69f8451, type: 3}
-  _sceneName: Tuto1
+  _sceneName: Tuto3
 --- !u!114 &404144006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuButton
   _audioSource: {fileID: 1832210865}
   _clickSound: {fileID: 8300000, guid: 2b02c299601d14c46aebeed1e69f8451, type: 3}
-  _sceneName: Tuto1
+  _sceneName: Tuto2
 --- !u!114 &1674410349
 MonoBehaviour:
   m_ObjectHideFlags: 0
