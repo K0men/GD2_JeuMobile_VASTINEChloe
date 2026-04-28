@@ -36,8 +36,6 @@ public class ScreenAdapt : MonoBehaviour
 
     private void AdaptToScreen()
     {
-        _camera.orthographicSize = Screen.height / 2f / _pixelsPerUnit;
-
         float halfHeight = _camera.orthographicSize;
         float halfWidth = halfHeight * _camera.aspect;
         float camX = _camera.transform.position.x;

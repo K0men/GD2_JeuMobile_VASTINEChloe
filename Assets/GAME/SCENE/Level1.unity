@@ -348,8 +348,8 @@ Transform:
   m_GameObject: {fileID: 196324473}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 901.67, y: 389.9, z: 0}
-  m_LocalScale: {x: 96.15, y: 96.15, z: 96.15}
+  m_LocalPosition: {x: 860, y: 470, z: 0}
+  m_LocalScale: {x: 132.98508, y: 132.98508, z: 132.98508}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -788,6 +788,9 @@ MonoBehaviour:
   _laneHeightFromBottom: 0.7
   _spawner: {fileID: 1617604760}
   _player: {fileID: 1702142585}
+  _pecheur: {fileID: 0}
+  _pecheurOffsetX: 0
+  _pecheurOffsetY: 0
 --- !u!1 &982563331
 GameObject:
   m_ObjectHideFlags: 0
