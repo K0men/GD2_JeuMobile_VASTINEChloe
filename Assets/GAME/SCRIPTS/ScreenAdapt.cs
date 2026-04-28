@@ -4,8 +4,6 @@ public class ScreenAdapt : MonoBehaviour
 {
     [Header("Reference Resolution")]
     [SerializeField] private float _referenceHeight = 1920f;
-    [SerializeField] private float _pixelsPerUnit = 1f;
-
     [Header("Background")]
     [SerializeField] private Transform _background;
 
@@ -78,7 +76,5 @@ public class ScreenAdapt : MonoBehaviour
             _spawner.SetSpawnY(camY + halfHeight + 50f);
         if (_pecheur != null)
             _pecheur.position = new Vector3(camX + _pecheurOffsetX, laneY + _pecheurOffsetY, -1f);
-
     }
-
 }

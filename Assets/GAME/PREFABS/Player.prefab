@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 202502852184435092, guid: 4488eee2dc86a20499f27ffb317c9856, type: 3}
+  m_Sprite: {fileID: -5977045006597854181, guid: 506f0f00c18798144b7a394a206148bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_inputManager: {fileID: 4375683026687461328}
+  m_audioEventDispatcher: {fileID: 0}
 --- !u!114 &4375683026687461328
 MonoBehaviour:
   m_ObjectHideFlags: 0
