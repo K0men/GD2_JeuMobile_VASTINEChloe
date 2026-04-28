@@ -9,6 +9,7 @@ public enum AudioType
     PlayerMovement,
     Destruction,
     Death,
+    Alert,
     Collect,
     Win
 }

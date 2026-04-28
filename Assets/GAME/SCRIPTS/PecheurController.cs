@@ -92,6 +92,8 @@ public class PecheurController : MonoBehaviour
     {
         _currentState = FishermanState.AlertWindow;
         SetExclamationVisible(true);
+        if (_audioEventDispatcher != null)
+            _audioEventDispatcher.Playaudio(AudioType.Alert);
         StartManagedCoroutine(AlertWindowRoutine());
     }
 
