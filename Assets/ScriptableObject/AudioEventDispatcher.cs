@@ -39,4 +39,11 @@ public class AudioEventDispatcher : ScriptableObject
             }
         }
     }
+
+    public void PlayClip(AudioClip clip)
+    {
+        if (clip != null)
+            OnAudioEvent?.Invoke(clip);
+    }
+
 }
